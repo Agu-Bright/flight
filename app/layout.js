@@ -1,16 +1,5 @@
-import localFont from "next/font/local";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export const metadata = {
   title: "Create Next App",
@@ -20,11 +9,32 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <link rel="shortcut icon" href="/img/fav.png" />
+        <meta name="author" content="colorlib" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <title>Travel</title>
+        <link
+          href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700"
+          rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/linearicons.css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <link rel="stylesheet" href="css/magnific-popup.css" />
+        <link rel="stylesheet" href="css/jquery-ui.css" />
+        <link rel="stylesheet" href="css/nice-select.css" />
+        <link rel="stylesheet" href="css/animate.min.css" />
+        <link rel="stylesheet" href="css/owl.carousel.css" />
+        <link rel="stylesheet" href="css/main.css" />
+      </head>
+
+      <body>{children}</body>
     </html>
   );
 }
