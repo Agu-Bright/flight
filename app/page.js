@@ -433,42 +433,42 @@ export default function Home() {
           <div className="row">
             <div className="col-lg-4">
               <div className="single-price">
-                <h4>Cheap Packages</h4>
+                <h4>Economy</h4>
                 <ul className="price-list">
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>New York</span>
+                    <span>Lagos State</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      &#8358; 200,000{" "}
                     </a>
                   </li>
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>Maldives</span>
+                    <span>Enugu</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      &#8358; 200,000{" "}
                     </a>
                   </li>
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>Sri Lanka</span>
+                    <span>Oyo</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      &#8358; 200,000{" "}
                     </a>
                   </li>
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>Nepal</span>
+                    <span>Abuja</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      &#8358; 200,000{" "}
                     </a>
                   </li>
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>Thiland</span>
+                    <span>Imo</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      &#8358; 200,000{" "}
                     </a>
                   </li>
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>Singapore</span>
+                    <span>Kano</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      &#8358; 200,000{" "}
                     </a>
                   </li>
                 </ul>
@@ -476,42 +476,42 @@ export default function Home() {
             </div>
             <div className="col-lg-4">
               <div className="single-price">
-                <h4>Luxury Packages</h4>
+                <h4>Bussiness Class</h4>
                 <ul className="price-list">
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>New York</span>
+                    <span>Enugu State</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      &#8358; 150000{" "}
                     </a>
                   </li>
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>Maldives</span>
+                    <span>Lagos</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      &#8358; 150000{" "}
                     </a>
                   </li>
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>Sri Lanka</span>
+                    <span>Oyo</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      &#8358; 150000{" "}
                     </a>
                   </li>
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>Nepal</span>
+                    <span>Abuja</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      &#8358; 150000{" "}
                     </a>
                   </li>
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>Thiland</span>
+                    <span>Imo</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      &#8358; 150000{" "}
                     </a>
                   </li>
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>Singapore</span>
+                    <span>Kano</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      &#8358; 150000{" "}
                     </a>
                   </li>
                 </ul>
@@ -519,42 +519,43 @@ export default function Home() {
             </div>
             <div className="col-lg-4">
               <div className="single-price">
-                <h4>Camping Packages</h4>
+                <h4>First Class</h4>
                 <ul className="price-list">
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>New York</span>
+                    <span>Enugu</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      &#8358; 150000{" "}
                     </a>
                   </li>
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>Maldives</span>
+                    <span>Lagos</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      &#8358; 150000{" "}
                     </a>
                   </li>
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>Sri Lanka</span>
+                    <span>Oyo</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      &#8358; 150000{" "}
                     </a>
                   </li>
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>Nepal</span>
+                    <span>Abuja</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      {" "}
+                      &#8358; 150000{" "}
                     </a>
                   </li>
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>Thiland</span>
+                    <span>Imo</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      &#8358; 150000{" "}
                     </a>
                   </li>
                   <li className="d-flex justify-content-between align-items-center">
-                    <span>Singapore</span>
+                    <span>Kano</span>
                     <a href="#" className="price-btn">
-                      $1500
+                      &#8358; 150000{" "}
                     </a>
                   </li>
                 </ul>
@@ -684,9 +685,7 @@ export default function Home() {
 
           <div className="row footer-bottom d-flex justify-content-between align-items-center">
             <p className="col-lg-8 col-sm-12 footer-text m-0">
-              Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script>
-              All rights reserved | This template is made with
+              Copyright &copy; All rights reserved | This template is made with
               <i className="fa fa-heart-o" aria-hidden="true"></i> by
               <a href="https://colorlib.com" target="_blank">
                 Colorlib
