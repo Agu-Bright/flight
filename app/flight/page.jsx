@@ -84,7 +84,7 @@ function BasicModal({ open, setOpen }) {
                 </select>
                 <select
                   type="text"
-                  className="form-control"
+                  className="form-control mt-2"
                   name="to"
                   placeholder="To "
                   onfocus="this.placeholder = ''"
@@ -124,7 +124,7 @@ function BasicModal({ open, setOpen }) {
                 </select>
                 <input
                   type="date"
-                  className="form-control date-picker"
+                  className="form-control date-picker mt-2"
                   name="start"
                   placeholder="Start "
                   onfocus="this.placeholder = ''"
@@ -134,7 +134,7 @@ function BasicModal({ open, setOpen }) {
                   type="number"
                   min="1"
                   max="20"
-                  className="form-control"
+                  className="form-control mt-2"
                   name="adults"
                   placeholder="Adults "
                   onfocus="this.placeholder = ''"
@@ -143,18 +143,29 @@ function BasicModal({ open, setOpen }) {
                   type="number"
                   min="1"
                   max="20"
-                  className="form-control"
+                  className="form-control mt-2"
                   name="child"
                   placeholder="Child "
                   onfocus="this.placeholder = ''"
                 />
-                <Link href="/flight" className="primary-btn text-uppercase">
-                  Search flights
-                </Link>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Link
+                    href="/flight"
+                    className="primary-btn text-uppercase mt-3"
+                  >
+                    Creat Ticket{" "}
+                  </Link>
+                </div>
               </form>
             </div>
             <div
-              className="tab-pane fade"
+              className="tab-pane fade mt-2"
               id="hotel"
               role="tabpanel"
               aria-labelledby="hotel-tab"
@@ -162,28 +173,28 @@ function BasicModal({ open, setOpen }) {
               <form className="form-wrap">
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control mt-2"
                   name="name"
                   placeholder="From "
                   onfocus="this.placeholder = ''"
                 />
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control mt-2"
                   name="to"
                   placeholder="To "
                   onfocus="this.placeholder = ''"
                 />
                 <input
                   type="text"
-                  className="form-control date-picker"
+                  className="form-control date-picker mt-2"
                   name="start"
                   placeholder="Start "
                   onfocus="this.placeholder = ''"
                 />
                 <input
                   type="text"
-                  className="form-control date-picker"
+                  className="form-control date-picker mt-2"
                   name="return"
                   placeholder="Return "
                   onfocus="this.placeholder = ''"
@@ -192,7 +203,7 @@ function BasicModal({ open, setOpen }) {
                   type="number"
                   min="1"
                   max="20"
-                  className="form-control"
+                  className="form-contro mt-2l"
                   name="adults"
                   placeholder="Adults "
                   onfocus="this.placeholder = ''"
