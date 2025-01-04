@@ -337,7 +337,7 @@ export default function Home() {
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-3 col-md-6">
+            <Box className="col-lg-3 col-md-6">
               <div className="single-other-issue">
                 <div className="thumb">
                   <img className="img-fluid" src="img/peace.jpg" alt="" />
@@ -380,8 +380,12 @@ export default function Home() {
                   Buy Ticket
                 </button>
               </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
+            </Box>
+
+            <Box
+              sx={{ marginTop: { md: "0px", xs: "10px !important" } }}
+              className="col-lg-3 col-md-6"
+            >
               <div className="single-other-issue">
                 <div className="thumb">
                   <img className="img-fluid" src="img/arik.jpeg" alt="" />
@@ -424,8 +428,12 @@ export default function Home() {
                   Buy Ticket
                 </button>
               </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
+            </Box>
+
+            <Box
+              sx={{ marginTop: { md: "0px", xs: "10px !important" } }}
+              className="col-lg-3 col-md-6"
+            >
               <div className="single-other-issue">
                 <div className="thumb">
                   <img className="img-fluid" src="img/ibom.jpeg" alt="" />
@@ -468,8 +476,12 @@ export default function Home() {
                   Buy Ticket
                 </button>
               </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
+            </Box>
+
+            <Box
+              sx={{ marginTop: { md: "0px", xs: "10px !important" } }}
+              className="col-lg-3 col-md-6"
+            >
               <div className="single-other-issue">
                 <div className="thumb">
                   <img className="img-fluid" src="img/max.jpg" alt="" />
@@ -513,7 +525,7 @@ export default function Home() {
                   Buy Ticket
                 </button>
               </div>
-            </div>
+            </Box>
           </div>
         </div>
       </section>
