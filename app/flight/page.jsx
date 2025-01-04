@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Link from "next/link";
+import axios from "axios";
 
 const style = {
   position: "absolute",
@@ -23,7 +24,32 @@ const style = {
 function BasicModal({ open, setOpen }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    to: "",
+    start: "",
+    adults: 1,
+    child: 0,
+  });
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const apiUrl = "/api/create-ticket";
+
+    try {
+      const response = await axios.post(apiUrl, formData);
+      console.log("Ticket created:", response.data);
+      alert("Ticket successfully created!");
+    } catch (error) {
+      console.error("Error creating ticket:", error);
+      alert("Failed to create ticket.");
+    }
+  };
   return (
     <div>
       {/* <Button onClick={handleOpen}>Open modal</Button> */}
@@ -41,93 +67,93 @@ function BasicModal({ open, setOpen }) {
               role="tabpanel"
               aria-labelledby="flight-tab"
             >
-              <form className="form-wrap">
+              <form className="form-wrap" onSubmit={handleSubmit}>
                 <select
-                  type="text"
                   className="form-control"
                   name="name"
-                  placeholder="From "
-                  onfocus="this.placeholder = ''"
+                  value={formData.name}
+                  onChange={handleChange}
                 >
-                  <option>Abia State</option>
-                  <option>Abuja</option>
-                  <option>Adamawa State</option>
-                  <option>Akwa Ibom State</option>
-                  <option>Anambara State</option>
-                  <option>Bauchi State</option>
-                  <option>Bayelsa State</option>
-                  <option>Benue State</option>
-                  <option>Borno State</option>
-                  <option>Cross River State</option>
-                  <option>Delta State</option>
-                  <option>Edo State</option>
-                  <option>Ekiti State</option>
-                  <option>Enugu State</option>
-                  <option>Gombe State</option>
-                  <option>Imo State</option>
-                  <option>Jigawa State</option>
-                  <option>kaduna State</option>
-                  <option>Kastina State</option>
-                  <option>Kebi State</option>
-                  <option>Kwara State</option>
-                  <option>Lagos State</option>
-                  <option>Niger State</option>
-                  <option>Ogun State</option>
-                  <option>Ondo State</option>
-                  <option>Osun State</option>
-                  <option>Oyo State</option>
-                  <option>Plateu State</option>
-                  <option>Rivers State</option>
-                  <option>Sokoto State</option>
-                  <option>Taraba State</option>
-                  <option>Zamfara State</option>
+                  <option value="Abia State">Abia State</option>
+                  <option value="Abuja">Abuja</option>
+                  <option value="Adamawa State">Adamawa State</option>
+                  <option value="Akwa Ibom State">Akwa Ibom State</option>
+                  <option value="Anambara State">Anambara State</option>
+                  <option value="Bauchi State">Bauchi State</option>
+                  <option value="Bayelsa State">Bayelsa State</option>
+                  <option value="Benue State">Benue State</option>
+                  <option value="Borno State">Borno State</option>
+                  <option value="Cross River State">Cross River State</option>
+                  <option value="Delta State">Delta State</option>
+                  <option value="Edo State">Edo State</option>
+                  <option value="Ekiti State">Ekiti State</option>
+                  <option value="Enugu State">Enugu State</option>
+                  <option value="Gombe State">Gombe State</option>
+                  <option value="Imo State">Imo State</option>
+                  <option value="Jigawa State">Jigawa State</option>
+                  <option value="Kaduna State">Kaduna State</option>
+                  <option value="Kastina State">Kastina State</option>
+                  <option value="Kebi State">Kebi State</option>
+                  <option value="Kwara State">Kwara State</option>
+                  <option value="Lagos State">Lagos State</option>
+                  <option value="Niger State">Niger State</option>
+                  <option value="Ogun State">Ogun State</option>
+                  <option value="Ondo State">Ondo State</option>
+                  <option value="Osun State">Osun State</option>
+                  <option value="Oyo State">Oyo State</option>
+                  <option value="Plateau State">Plateau State</option>
+                  <option value="Rivers State">Rivers State</option>
+                  <option value="Sokoto State">Sokoto State</option>
+                  <option value="Taraba State">Taraba State</option>
+                  <option value="Zamfara State">Zamfara State</option>
                 </select>
+
                 <select
-                  type="text"
                   className="form-control mt-2"
                   name="to"
-                  placeholder="To "
-                  onfocus="this.placeholder = ''"
+                  value={formData.to}
+                  onChange={handleChange}
                 >
-                  <option>Abia State</option>
-                  <option>Abuja</option>
-                  <option>Adamawa State</option>
-                  <option>Akwa Ibom State</option>
-                  <option>Anambara State</option>
-                  <option>Bauchi State</option>
-                  <option>Bayelsa State</option>
-                  <option>Benue State</option>
-                  <option>Borno State</option>
-                  <option>Cross River State</option>
-                  <option>Delta State</option>
-                  <option>Edo State</option>
-                  <option>Ekiti State</option>
-                  <option>Enugu State</option>
-                  <option>Gombe State</option>
-                  <option>Imo State</option>
-                  <option>Jigawa State</option>
-                  <option>kaduna State</option>
-                  <option>Kastina State</option>
-                  <option>Kebi State</option>
-                  <option>Kwara State</option>
-                  <option>Lagos State</option>
-                  <option>Niger State</option>
-                  <option>Ogun State</option>
-                  <option>Ondo State</option>
-                  <option>Osun State</option>
-                  <option>Oyo State</option>
-                  <option>Plateu State</option>
-                  <option>Rivers State</option>
-                  <option>Sokoto State</option>
-                  <option>Taraba State</option>
-                  <option>Zamfara State</option>
+                  <option value="Abia State">Abia State</option>
+                  <option value="Abuja">Abuja</option>
+                  <option value="Adamawa State">Adamawa State</option>
+                  <option value="Akwa Ibom State">Akwa Ibom State</option>
+                  <option value="Anambara State">Anambara State</option>
+                  <option value="Bauchi State">Bauchi State</option>
+                  <option value="Bayelsa State">Bayelsa State</option>
+                  <option value="Benue State">Benue State</option>
+                  <option value="Borno State">Borno State</option>
+                  <option value="Cross River State">Cross River State</option>
+                  <option value="Delta State">Delta State</option>
+                  <option value="Edo State">Edo State</option>
+                  <option value="Ekiti State">Ekiti State</option>
+                  <option value="Enugu State">Enugu State</option>
+                  <option value="Gombe State">Gombe State</option>
+                  <option value="Imo State">Imo State</option>
+                  <option value="Jigawa State">Jigawa State</option>
+                  <option value="Kaduna State">Kaduna State</option>
+                  <option value="Kastina State">Kastina State</option>
+                  <option value="Kebi State">Kebi State</option>
+                  <option value="Kwara State">Kwara State</option>
+                  <option value="Lagos State">Lagos State</option>
+                  <option value="Niger State">Niger State</option>
+                  <option value="Ogun State">Ogun State</option>
+                  <option value="Ondo State">Ondo State</option>
+                  <option value="Osun State">Osun State</option>
+                  <option value="Oyo State">Oyo State</option>
+                  <option value="Plateau State">Plateau State</option>
+                  <option value="Rivers State">Rivers State</option>
+                  <option value="Sokoto State">Sokoto State</option>
+                  <option value="Taraba State">Taraba State</option>
+                  <option value="Zamfara State">Zamfara State</option>
                 </select>
+
                 <input
                   type="date"
                   className="form-control date-picker mt-2"
                   name="start"
-                  placeholder="Start "
-                  onfocus="this.placeholder = ''"
+                  value={formData.start}
+                  onChange={handleChange}
                 />
 
                 <input
@@ -136,18 +162,20 @@ function BasicModal({ open, setOpen }) {
                   max="20"
                   className="form-control mt-2"
                   name="adults"
-                  placeholder="Adults "
-                  onfocus="this.placeholder = ''"
+                  value={formData.adults}
+                  onChange={handleChange}
                 />
+
                 <input
                   type="number"
-                  min="1"
+                  min="0"
                   max="20"
                   className="form-control mt-2"
                   name="child"
-                  placeholder="Child "
-                  onfocus="this.placeholder = ''"
+                  value={formData.child}
+                  onChange={handleChange}
                 />
+
                 <div
                   style={{
                     display: "flex",
@@ -155,129 +183,13 @@ function BasicModal({ open, setOpen }) {
                     justifyContent: "center",
                   }}
                 >
-                  <Link
-                    href="/flight"
+                  <button
+                    type="submit"
                     className="primary-btn text-uppercase mt-3"
                   >
-                    Creat Ticket{" "}
-                  </Link>
+                    Create Ticket
+                  </button>
                 </div>
-              </form>
-            </div>
-            <div
-              className="tab-pane fade mt-2"
-              id="hotel"
-              role="tabpanel"
-              aria-labelledby="hotel-tab"
-            >
-              <form className="form-wrap">
-                <input
-                  type="text"
-                  className="form-control mt-2"
-                  name="name"
-                  placeholder="From "
-                  onfocus="this.placeholder = ''"
-                />
-                <input
-                  type="text"
-                  className="form-control mt-2"
-                  name="to"
-                  placeholder="To "
-                  onfocus="this.placeholder = ''"
-                />
-                <input
-                  type="text"
-                  className="form-control date-picker mt-2"
-                  name="start"
-                  placeholder="Start "
-                  onfocus="this.placeholder = ''"
-                />
-                <input
-                  type="text"
-                  className="form-control date-picker mt-2"
-                  name="return"
-                  placeholder="Return "
-                  onfocus="this.placeholder = ''"
-                />
-                <input
-                  type="number"
-                  min="1"
-                  max="20"
-                  className="form-contro mt-2l"
-                  name="adults"
-                  placeholder="Adults "
-                  onfocus="this.placeholder = ''"
-                />
-                <input
-                  type="number"
-                  min="1"
-                  max="20"
-                  className="form-control"
-                  name="child"
-                  placeholder="Child "
-                  onfocus="this.placeholder = ''"
-                />
-                <a href="#" className="primary-btn text-uppercase">
-                  Search Hotels
-                </a>
-              </form>
-            </div>
-            <div
-              className="tab-pane fade"
-              id="holiday"
-              role="tabpanel"
-              aria-labelledby="holiday-tab"
-            >
-              <form className="form-wrap">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="name"
-                  placeholder="From "
-                  onfocus="this.placeholder = ''"
-                />
-                <input
-                  type="text"
-                  className="form-control"
-                  name="to"
-                  placeholder="To "
-                  onfocus="this.placeholder = ''"
-                />
-                <input
-                  type="text"
-                  className="form-control date-picker"
-                  name="start"
-                  placeholder="Start "
-                  onfocus="this.placeholder = ''"
-                />
-                <input
-                  type="text"
-                  className="form-control date-picker"
-                  name="return"
-                  placeholder="Return "
-                  onfocus="this.placeholder = ''"
-                />
-                <input
-                  type="number"
-                  min="1"
-                  max="20"
-                  className="form-control"
-                  name="adults"
-                  placeholder="Adults "
-                  onfocus="this.placeholder = ''"
-                />
-                <input
-                  type="number"
-                  min="1"
-                  max="20"
-                  className="form-control"
-                  name="child"
-                  placeholder="Child "
-                  onfocus="this.placeholder = ''"
-                />
-                <a href="#" className="primary-btn text-uppercase">
-                  Search Holidays
-                </a>
               </form>
             </div>
           </div>
@@ -289,6 +201,7 @@ function BasicModal({ open, setOpen }) {
 
 export default function Home() {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState({});
 
   return (
     <>
@@ -298,11 +211,11 @@ export default function Home() {
             <div className="row align-items-center">
               <div className="col-lg-6 col-sm-6 col-6 header-top-left">
                 <ul>
-                  <li>
+                  {/* <li>
                     <a href="#">Visit Us</a>
-                  </li>
+                  </li> */}
                   <li>
-                    <a href="#">Buy Tickets</a>
+                    <a href="/flight">Buy Tickets</a>
                   </li>
                 </ul>
               </div>
@@ -328,7 +241,7 @@ export default function Home() {
         <div className="container main-menu">
           <div className="row align-items-center justify-content-between d-flex">
             <div id="logo">
-              <a href="index.html">
+              <a href="/">
                 <img src="img/logo.png" alt="" title="" />
               </a>
             </div>
@@ -337,7 +250,7 @@ export default function Home() {
                 <li>
                   <a href="/">Home</a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="about.html">About</a>
                 </li>
                 <li>
@@ -379,7 +292,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a href="contact.html">Contact</a>
-                </li>
+                </li> */}
               </ul>
             </nav>
           </div>
@@ -426,6 +339,16 @@ export default function Home() {
                   <span style={{ fontWeight: "800" }}>Destination :</span> Abuja
                 </p>
                 <button
+                  onClick={() => {
+                    setOpen(true);
+                    setActive({
+                      name: "Air Peace",
+                      to: "Abuja",
+                      start: "2022-10-10",
+                      adults: 1,
+                      child: 0,
+                    });
+                  }}
                   style={{
                     border: "none",
                     borderRadius: "5px",
@@ -460,6 +383,16 @@ export default function Home() {
                   <span style={{ fontWeight: "800" }}>Destination :</span> Abuja
                 </p>
                 <button
+                  onClick={() => {
+                    setOpen(true);
+                    setActive({
+                      name: "Arik Air",
+                      to: "Abuja",
+                      start: "2022-10-10",
+                      adults: 1,
+                      child: 0,
+                    });
+                  }}
                   style={{
                     border: "none",
                     borderRadius: "5px",
@@ -494,7 +427,16 @@ export default function Home() {
                   <span style={{ fontWeight: "800" }}>Destination :</span> Abuja
                 </p>
                 <button
-                  onClick={() => setOpen(true)}
+                  onClick={() => {
+                    setOpen(true);
+                    setActive({
+                      name: "Ibom Air",
+                      to: "Abuja",
+                      start: "2022-10-10",
+                      adults: 1,
+                      child: 0,
+                    });
+                  }}
                   style={{
                     border: "none",
                     borderRadius: "5px",
@@ -530,6 +472,16 @@ export default function Home() {
                 </p>
 
                 <button
+                  onClick={() => {
+                    setOpen(true);
+                    setActive({
+                      name: "Max Air",
+                      to: "Abuja",
+                      start: "2022-10-10",
+                      adults: 1,
+                      child: 0,
+                    });
+                  }}
                   style={{
                     border: "none",
                     borderRadius: "5px",
@@ -566,13 +518,13 @@ export default function Home() {
                   <div className="col">
                     <ul>
                       <li>
-                        <a href="#">Home</a>
+                        <a href="/">Home</a>
                       </li>
-                      <li>
+                      {/* <li>
                         <a href="#">Feature</a>
-                      </li>
+                      </li> */}
                       <li>
-                        <a href="#">Services</a>
+                        <a href="/">Services</a>
                       </li>
                       <li>
                         <a href="#">Portfolio</a>
@@ -582,14 +534,14 @@ export default function Home() {
                   <div className="col">
                     <ul>
                       <li>
-                        <a href="#">Team</a>
+                        <a href="/">Team</a>
                       </li>
                       <li>
-                        <a href="#">Pricing</a>
+                        <a href="/">Pricing</a>
                       </li>
-                      <li>
+                      {/* <li>
                         <a href="#">Blog</a>
-                      </li>
+                      </li> */}
                       <li>
                         <a href="#">Contact</a>
                       </li>

@@ -1,23 +1,27 @@
 import mongoose from "mongoose";
 
 const ticketModel = new mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: "User",
-  },
-  wallet: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: "Wallet",
-  },
-  amount: {
+  name: {
     type: String,
   },
-  status: {
+  to: {
     type: String,
-    default: "pending",
   },
+  from: {
+    type: String,
+  },
+
+  adult: {
+    type: Number,
+  },
+  adult: {
+    type: Number,
+  },
+
+  start: {
+    type: Date,
+  },
+
   createdAt: {
     type: Date,
     default: Date.now,
