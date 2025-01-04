@@ -8,22 +8,24 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Link from "next/link";
 import axios from "axios";
+import { CircularProgress, Stack } from "@node_modules/@mui/material";
 
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: { md: 400, xs: 300 },
   bgcolor: "background.paper",
-  border: "2px solid #000",
   boxShadow: 24,
   p: 4,
+  borderRadius: "10px",
 };
 
 function BasicModal({ open, setOpen }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     to: "",
@@ -38,17 +40,20 @@ function BasicModal({ open, setOpen }) {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const apiUrl = "/api/create-ticket";
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+    // const apiUrl = "/api/create-ticket";
 
-    try {
-      const response = await axios.post(apiUrl, formData);
-      console.log("Ticket created:", response.data);
-      alert("Ticket successfully created!");
-    } catch (error) {
-      console.error("Error creating ticket:", error);
-      alert("Failed to create ticket.");
-    }
+    // try {
+    //   const response = await axios.post(apiUrl, formData);
+    //   console.log("Ticket created:", response.data);
+    //   alert("Ticket successfully created!");
+    // } catch (error) {
+    //   console.error("Error creating ticket:", error);
+    //   alert("Failed to create ticket.");
+    // }
   };
   return (
     <div>
@@ -67,7 +72,7 @@ function BasicModal({ open, setOpen }) {
               role="tabpanel"
               aria-labelledby="flight-tab"
             >
-              <form className="form-wrap" onSubmit={handleSubmit}>
+              <form className="form-wrap">
                 <select
                   className="form-control"
                   name="name"
@@ -182,15 +187,31 @@ function BasicModal({ open, setOpen }) {
                     alignItems: "center",
                     justifyContent: "center",
                   }}
-                >
-                  <button
-                    type="submit"
-                    className="primary-btn text-uppercase mt-3"
-                  >
-                    Create Ticket
-                  </button>
-                </div>
+                ></div>
               </form>
+              <button
+                style={{
+                  borderRadius: "10px",
+                  border: "none",
+                  paddingY: "10px",
+                  backgroundColor: "#F8B600",
+                }}
+                onClick={() => handleSubmit()}
+                className="mt-3"
+              >
+                {loading ? (
+                  <>
+                    <Stack direction="row" spacing={1} alignItems="center">
+                      <Typography sx={{ color: "white" }}>
+                        Creating Ticket ...
+                      </Typography>
+                      <CircularProgress size={15} sx={{ color: "white" }} />
+                    </Stack>
+                  </>
+                ) : (
+                  "Create Ticket"
+                )}
+              </button>
             </div>
           </div>
         </Box>
